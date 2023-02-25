@@ -1,13 +1,20 @@
-const http = require('http');
+const express = require('express');
+const app = express();
 
-const server = http.createServer((req, res) => {
-  res.writeHead(200, {'Content-Type': 'text/html'});
-  res.end('<h1>Welcome to nodejs Web page</h1>');
+app.get('/', (req, res) => {
+  res.send('<h1>Hi</h1>');
+});
+app.get('/pratap', (req, res) => {
+  res.send('<h1>Hi Pratap</h1>');
+});
+app.get('/naveen', (req, res) => {
+  res.send('<h1>Hi Naveen</h1>');
 });
 
-server.listen(9981, () => {
+app.listen(9981, () => {
   console.log('Server running on port 9981');
 });
+
 
 
 
